@@ -3,7 +3,7 @@ import "./index.scss";
 import { useEffect, useRef, useState } from "react";
 import { Overlay } from "@nutui/nutui-react";
 import { X } from "lucide-react";
-import demo from "../../assets/p.mp4";
+// import demo from "../../assets/p.mp4";
 export default function Index() {
   const [visible, setVisible] = useState(true);
   const [muted, setMuted] = useState<boolean>(true);
@@ -69,7 +69,7 @@ export default function Index() {
               <Text className="title">视频</Text>
             </View>
             {/* 内容 */}
-            <View className="content">
+            {/* <View className="content">
               <video
                 className="video"
                 ref={videoRef}
@@ -79,7 +79,7 @@ export default function Index() {
                 onTimeUpdate={handleTimeUpdate}
                 onLoadedMetadata={handleLoadedMetadata}
               ></video>
-            </View>
+            </View> */}
             {/* 底部 */}
             <View className="bottom">
               <Text className="word">{currentTime}</Text>

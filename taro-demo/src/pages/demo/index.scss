@@ -1,0 +1,58 @@
+.index-container {
+  .index-content {
+    // 视频预览
+    .preview-video-wrapper {
+      .preview-video-main {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        // 头部
+        .header {
+          width: 100%;
+          position: absolute;
+          top: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          .closed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 10px;
+          }
+          .title {
+            color: white;
+            text-align: center;
+            font-size: 15px;
+          }
+        }
+        // 内容
+        .content {
+          flex: 1;
+          //   background-color: red;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .video {
+            width: 100%;
+            max-height: 40%;
+            object-fit: cover;
+            background-color: black;
+            outline: none;
+          }
+        }
+        // 底部
+        .bottom {
+          position: absolute;
+          bottom: 0px;
+          z-index: 100;
+          .word {
+            color: #ffffff;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}
