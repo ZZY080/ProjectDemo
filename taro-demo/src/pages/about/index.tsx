@@ -1,10 +1,17 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Text, View } from "@tarojs/components";
+import { useDidShow } from "@tarojs/taro";
 
-const PDFPage: FC = () => {
+const AboutPage: FC = () => {
   const goToPage = () => {
-    window.open("http://www.baidu.com");
+    window.open("http://www.baidu.com", "_self");
   };
+  useDidShow(() => {
+    console.log("useDidShow");
+  });
+  useEffect(() => {
+    console.log("useEffect");
+  }, []);
   return (
     <View style={{ height: "100vh" }}>
       <Text onClick={() => goToPage()} style={{ color: "red" }}>
@@ -15,4 +22,4 @@ const PDFPage: FC = () => {
   );
 };
 
-export default PDFPage;
+export default AboutPage;
