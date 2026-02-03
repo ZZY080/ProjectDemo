@@ -2,6 +2,7 @@ import { PropsWithChildren } from "react";
 import { useLaunch } from "@tarojs/taro";
 import "@nutui/nutui-react/dist/style.css";
 import "./app.scss";
+import "@nutui/nutui-react-taro/dist/style.css";
 
 function App({ children }: PropsWithChildren<any>) {
   useLaunch(() => {
