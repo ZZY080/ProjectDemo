@@ -1,0 +1,192 @@
+.upload-demo {
+  padding: 20px;
+  
+  .section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #333;
+    display: block;
+  }
+  
+  .upload-section {
+    .action-buttons {
+      display: flex;
+      margin-bottom: 20px;
+      
+      .nut-button {
+        flex: 1;
+        
+        &:first-child {
+          flex: 2;
+        }
+      }
+    }
+  }
+  
+  .file-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    
+    .file-item {
+      .file-preview-wrapper {
+        border: 1px solid #e8e8e8;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #fff;
+        transition: all 0.3s;
+        
+        &:hover {
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+      }
+      
+      .file-preview {
+        position: relative;
+        width: 100%;
+        height: 100px;
+        background: #f5f5f5;
+        
+        .preview-image {
+          width: 100%;
+          height: 100%;
+        }
+        
+        .delete-btn {
+          position: absolute;
+          top: 4px;
+          right: 4px;
+          min-width: auto;
+          padding: 2px 8px;
+          font-size: 10px;
+          background: rgba(255, 77, 79, 0.9);
+          border: none;
+          border-radius: 12px;
+          
+          .nut-icon {
+            margin-right: 2px;
+          }
+          
+          &:hover {
+            background: rgba(255, 77, 79, 1);
+          }
+        }
+      }
+      
+      .file-info {
+        padding: 8px;
+        border-top: 1px solid #f0f0f0;
+        
+        .file-name-row {
+          display: flex;
+          align-items: center;
+          margin-bottom: 4px;
+          
+          .file-icon {
+            font-size: 12px;
+            margin-right: 4px;
+            flex-shrink: 0;
+          }
+          
+          .file-name {
+            flex: 1;
+            font-size: 12px;
+            color: #333;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            
+            &:active {
+              opacity: 0.6;
+            }
+          }
+        }
+        
+        .file-meta {
+          .file-index {
+            font-size: 10px;
+            color: #666;
+          }
+        }
+      }
+    }
+    
+    .empty-state {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      border: 1px dashed #d9d9d9;
+      border-radius: 8px;
+      background: #fafafa;
+      
+      .empty-text {
+        margin-top: 12px;
+        color: #999;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      
+      .empty-subtext {
+        margin-top: 4px;
+        color: #ccc;
+        font-size: 12px;
+      }
+    }
+  }
+  
+  .upload-info {
+    margin-top: 20px;
+    padding: 12px;
+    background: #f8f8f8;
+    border-radius: 6px;
+    
+    .info-text {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.8;
+      
+      &:not(:last-child) {
+        margin-bottom: 4px;
+      }
+    }
+  }
+}
+
+// 响应式调整
+@media (max-width: 375px) {
+  .upload-demo {
+    padding: 16px;
+    
+    .file-list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+  }
+}
+
+// 预览相关样式
+.preview-modal {
+  .preview-image-full {
+    width: 100%;
+    height: 70vh;
+  }
+  
+  .preview-info {
+    padding: 12px;
+    
+    .preview-filename {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 4px;
+    }
+    
+    .preview-size {
+      font-size: 12px;
+      color: #666;
+    }
+  }
+}

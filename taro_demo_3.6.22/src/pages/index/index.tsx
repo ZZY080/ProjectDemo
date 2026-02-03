@@ -3,7 +3,7 @@ import { Uploader, Button, Loading } from "@nutui/nutui-react-taro";
 import { Star } from "@nutui/icons-react-taro";
 
 const Demo4 = () => {
-  const uploadUrl = "http://192.168.0.100:8080/upload";
+  const uploadUrl = "http://192.168.2.6:8080/upload";
   const [fileList, setFileList] = useState<any[]>([
     {
       name: "文件2.png",
