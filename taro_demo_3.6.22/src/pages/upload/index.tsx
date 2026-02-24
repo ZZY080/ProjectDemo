@@ -1,7 +1,18 @@
 import { Dongdong, Star } from "@nutui/icons-react-taro";
 import { Button, Cell, FileItem, Uploader } from "@nutui/nutui-react-taro";
+import { Image, Text, View } from "@tarojs/components";
+import Taro from "@tarojs/taro";
 import { useState } from "react";
 
+type UploadItem = {
+  uid: string;
+  name: string;
+  previewUrl: string; // 选择后立即展示（tempFilePath/blob）
+  url: string; // 上传成功后替换成真实 url
+  status: "ready" | "uploading" | "success" | "error";
+  message?: string;
+  percent?: number;
+};
 const Demo1 = () => {
   const uploadUrl = "http://192.168.2.6:8080/upload";
   const [fileList, setFileList] = useState<any[]>([
@@ -25,6 +36,11 @@ const Demo1 = () => {
   ]);
   const onOversize = (files: Taro.chooseImage.ImageFile[]) => {
     console.log("oversize触发文件大小不能超过50kb", files);
+  };
+
+  const beforeUpload = async (files: File[]) => {
+    console.log("beforeUpload:", files);
+    return files;
   };
 
   const beforeXhrUpload = (taroUploadFile: any, options: any) => {
@@ -60,7 +76,7 @@ const Demo1 = () => {
           };
           console.log("fileItem:", fileItem);
           // 通知 Uploader 更新状态
-          options.onSuccess?.(fileItem, options);
+          options.onSuccess?.(response, options);
         } else {
           options.onFailure?.(response, options);
         }
@@ -96,26 +112,44 @@ const Demo1 = () => {
     console.log("onFileItemClick:", JSON.stringify(file), "----", index);
   };
 
+  const onClick = (e) => {
+    Taro.chooseImage({
+      count: 1,
+      success: (res) => {
+        console.log(res);
+      },
+    });
+  };
+
   return (
-    <Uploader
-      url={uploadUrl}
-      sourceType={["album"]}
-      // value={fileList}
-      defaultValue={fileList}
-      beforeXhrUpload={beforeXhrUpload}
-      maxFileSize={1024 * 100000}
-      onOversize={onOversize}
-      onChange={onChange}
-      onSuccess={onSuccess}
-      multiple={false}
-      maxCount={10}
-      previewType="list"
-      onFileItemClick={onFileItemClick}
-    >
-      <Button type="success" size="small">
-        上传文件
-      </Button>
-    </Uploader>
+    <View>
+      <Cell>
+        <Uploader
+          url={uploadUrl}
+          sourceType={["album"]}
+          // value={fileList}
+          defaultValue={fileList}
+          beforeUpload={beforeUpload}
+          beforeXhrUpload={beforeXhrUpload}
+          maxFileSize={1024 * 100000}
+          onOversize={onOversize}
+          onChange={onChange}
+          onSuccess={onSuccess}
+          accept="*"
+          multiple={false}
+          maxCount={10}
+          previewType="list"
+          onFileItemClick={onFileItemClick}
+        >
+          <Button type="success" size="small">
+            上传文件
+          </Button>
+        </Uploader>
+      </Cell>
+      <Cell>
+        <Button onClick={onClick}></Button>
+      </Cell>
+    </View>
   );
 };
 
