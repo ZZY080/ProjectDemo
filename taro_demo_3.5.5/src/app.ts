@@ -1,15 +1,17 @@
-import { Component } from 'react'
-import './app.scss'
+import { Component } from "react";
+import "./app.scss";
 
+const a = require.context("./", true, /\.(png|jpg|jpeg|gif|svg|ts)$/);
+console.log("a:", a.keys());
 class App extends Component {
-  componentDidMount () {}
+  componentDidMount() {}
 
-  componentDidShow () {}
+  componentDidShow() {}
 
-  componentDidHide () {}
+  componentDidHide() {}
 
   render() {
-    return this.props.children
+    return this.props.children;
   }
 }
-export default App
+export default App;

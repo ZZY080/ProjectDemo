@@ -1,4 +1,5 @@
 /// <reference types="@tarojs/taro" />
+/// <reference types="webpack-env" />
 
 declare module '*.png';
 declare module '*.gif';

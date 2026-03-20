@@ -44,7 +44,13 @@ const config = {
       },
     },
   },
+
   h5: {
+    webpackChain(chain) {
+      chain.merge({
+        ignoreWarnings: [/webpackExports/],
+      });
+    },
     publicPath: "/",
     staticDirectory: "static",
     // esnextModules: ['nutui-react'],
