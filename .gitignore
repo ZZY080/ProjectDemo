@@ -5,6 +5,7 @@ release/
 dist/
 dist-electron/
 build/
+out/
 miniprogram_npm/
 
 
