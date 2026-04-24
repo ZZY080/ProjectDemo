@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 13, "column": 0}, "map": {"version":3,"sources":["file:///Users/zengzhiyuan/Desktop/ProjectDemo/nextdemo/app/favicon.ico.mjs%20%28structured%20image%20object%29"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 256, height: 256 }\n"],"names":["src","width","height"],"mappings":";;;;AAAA;;uCACe;IAAEA,KAAAA,mIAAG;IAAEC,OAAO;IAAKC,QAAQ;AAAI"}},
+    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":["file:///Users/zengzhiyuan/Desktop/ProjectDemo/nextdemo/app/page.tsx"],"sourcesContent":["import Image from \"next/image\";\n\nexport default function Home() {\n  return (\n    <div className=\"flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black\">\n      <main className=\"flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start\">\n        <div>wqwq</div>\n        <Image\n          src={\n            \"https://pic.rmb.bdstatic.com/bjh/news/3fe6db1a8d291be39192f9a06c74ce99.png\"\n          }\n          alt=\"Picture of the author\"\n          width={500}\n          height={500}\n        />\n      </main>\n    </div>\n  );\n}\n"],"names":["Home","className","src","alt","width","height"],"mappings":";;;;;AAAA;;;AAEe,SAASA;IACtB,qBACE,+YAAC;QAAIC,WAAU;kBACb,cAAA,+YAAC;YAAKA,WAAU;;8BACd,+YAAC;8BAAI;;;;;;8BACL,+YAAC,ySAAK;oBACJC,KACE;oBAEFC,KAAI;oBACJC,OAAO;oBACPC,QAAQ;;;;;;;;;;;;;;;;;AAKlB"}}]
+}
