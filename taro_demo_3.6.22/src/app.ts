@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDidShow, useDidHide } from "@tarojs/taro";
+<<<<<<< Updated upstream
 
 // 尝试加载 pages 目录下的所有 tsx 文件
 let pageModules: any = null;
@@ -27,6 +28,21 @@ function App(props) {
   useEffect(() => {
     console.log("App 组件已挂载，页面模块:", pageModules);
   }, []);
+=======
+// 全局样式
+import "./app.scss";
+
+// const a = require.context("./pages", true, /\.(tsx|jsx)$/);
+const a = require.context(
+  "./pages",
+  true,
+  /^(?!.*\.config\.(ts|js)$).*\.(tsx|ts|jsx|js)$/,
+);
+
+function App(props) {
+  // 可以使用所有的 React Hooks
+  useEffect(() => {});
+>>>>>>> Stashed changes
 
   // 对应 onShow
   useDidShow(() => {});
